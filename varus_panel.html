@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>VARUS Панель</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f4f7;
+    }
+
+    .sidebar {
+      width: 200px;
+      background: white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      padding: 10px;
+      border-right: 1px solid #ddd;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    .logo img {
+      height: 24px;
+      margin-right: 8px;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .filters button {
+      background: white;
+      border: 1px solid #007bff;
+      color: #007bff;
+      padding: 6px 12px;
+      margin-right: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .filters input {
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f7f7f7;
+      position: relative;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 28px;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #d9534f;
+      transition: .4s;
+      border-radius: 30px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "OFF";
+      color: white;
+      left: 10px;
+      line-height: 28px;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #5cb85c;
+    }
+
+    input:checked + .slider:before {
+      content: "ON";
+      left: 18px;
+    }
+
+    .filter-icon {
+      position: absolute;
+      right: 4px;
+      top: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/VARUS_logo.svg/512px-VARUS_logo.svg.png" alt="VARUS" />
+      <strong>VARUS</strong>
+    </div>
+    <div>📄 Ескалації</div>
+  </div>
+
+  <div class="content">
+    <div class="filters">
+      <button>🔍 Скинути</button>
+      <input type="text" placeholder="Магазин" />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Місто <span class="filter-icon">🔽</span></th>
+          <th>Код</th>
+          <th>Назва</th>
+          <th>Планова</th>
+          <th>Експрес</th>
+          <th>Priority <span class="filter-icon">🔽</span></th>
+          <th>Самовивоз</th>
+          <th>VARUS Drive</th>
+          <th>Glovo</th>
+          <th>Видача</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Дніпро</td>
+          <td>1001</td>
+          <td>Варус-01</td>
+          <td><label class="switch"><input checked type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input checked type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input checked type="checkbox"><span class="slider"></span></label></td>
+        </tr>
+        <tr>
+          <td>Дніпро</td>
+          <td>1057</td>
+          <td>Варус-39</td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input checked type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input type="checkbox"><span class="slider"></span></label></td>
+          <td><label class="switch"><input checked type="checkbox"><span class="slider"></span></label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
